@@ -1,0 +1,1 @@
+Backend hecho con Python y FastAPI.
