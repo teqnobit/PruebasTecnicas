@@ -5,8 +5,8 @@ https://www.youtube.com/watch?v=KJkqQGstg14&t=100s
 2. El listado de recursos tiene que cumplir con la estructura:
    ``` Javascript
    {
-    lat: 35.52,
-    long: 55.78,
+    lat: 35.52250,
+    long: 55.78548,
     tiempo: new Date("1 Aug 2025")
    }
    ```
