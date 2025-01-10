@@ -1,0 +1,15 @@
+{
+  "name": "node-ls-fun",
+  "version": "1.0.0",
+  "description": "Ejercicio de practica de node.js. Esta es una aplicacion que lee e imprime los archivos y directorios dentro de un directorio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  }
+}
