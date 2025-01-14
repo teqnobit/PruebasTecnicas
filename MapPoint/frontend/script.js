@@ -4,8 +4,18 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+const botonActualizar = document.getElementById("actualizar");
+botonActualizar.addEventListener("click", randomPoint);
+// botonActualizar.onclick = randomPoint;  // Importante igualar la referencia de la funcion y no la funcion invocada (randomPoint())
+
 let marker;
-fetch("http://127.0.0.1:8000/api/getPoint")
+async function randomPoint() {
+    // Limpiamos campos
+    document.getElementById("h2-coor").textContent = "Coordenadas: ";
+    document.getElementById("h2-fecha").textContent = "Fecha: ";
+
+    const endpoint = "https://teqnobit.xyz/api/mappoint/v1/getPoint";
+    fetch(endpoint)
     .then(response => response.json())
     .then(data => {
         L.marker([data.lat, data.long]).addTo(map);
@@ -13,3 +23,5 @@ fetch("http://127.0.0.1:8000/api/getPoint")
         document.getElementById("h2-fecha").textContent += `${data.tiempo}`;
         map.setView([data.lat, data.long], 9);
     });
+}
+randomPoint();
